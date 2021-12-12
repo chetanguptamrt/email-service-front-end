@@ -1,0 +1,23 @@
+<mat-progress-bar *ngIf="flag" mode="indeterminate"></mat-progress-bar>
+<div class="container">
+    <h2 [style.textAlign]="'center'">Send Your Email</h2>
+    <form (ngSubmit)="submitForm()">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>To</mat-label>
+            <input name="to" [(ngModel)]="data.to" matInput placeholder="xyz@example.com" required>
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input name="subject" [(ngModel)]="data.subject" matInput placeholder="Ex: Angular With Java API" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Body</mat-label>
+            <textarea name="body" [(ngModel)]="data.body" style="resize: none;" rows="10" matInput placeholder="Write body of email..." required></textarea>
+        </mat-form-field>
+        <div [style.textAlign]="'center'">
+            <button mat-raised-button color="primary">Submit</button>
+        </div>
+    </form>
+</div>
